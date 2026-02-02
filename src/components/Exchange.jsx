@@ -1,13 +1,11 @@
 import React from 'react';
-import { Row, Col, Typography } from 'antd';
+import { Row, Col } from 'antd';
 
 import { useGetExchangesQuery } from '../services/cryptoApi';
 import Loader from './Loader';
 
-const { Title } = Typography;
-
 const Exchanges = () => {
-  const { data, isFetching } = useGetExchangesQuery();
+  const { isFetching } = useGetExchangesQuery();
   // Note: To access this endpoint you need premium plan
   if (isFetching) return <Loader />;
 
